@@ -1,0 +1,12 @@
+name: core_ui
+description: Core UI module for reusable widgets and themes.
+version: 1.0.0
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  core:
+    path: ../core
+  flutter_svg: ^2.0.17
