@@ -9,4 +9,4 @@ dependencies:
     sdk: flutter
   core:
     path: ../core
-  flutter_svg: ^2.0.17
+  flutter_svg: ^2.0.0

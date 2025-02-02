@@ -1,7 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:core/data/datasources/product_local_data_source.dart';
+import 'package:core/data/datasources/user_local_data_source.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final productSource = ProductLocalDataSource();
+  final userSource = UserLocalDataSource();
+
+  final products = await productSource.getProducts();
+  final user = await userSource.getUser();
+  var u = user.email;
+
+  print('Products: $products');
+  print('User: $u');
+
+  runApp(MyApplication());
+}
+
+class MyApplication extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(child: Text('Check console for JSON output')),
+      ),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
