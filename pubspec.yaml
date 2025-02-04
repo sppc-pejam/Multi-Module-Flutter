@@ -7,24 +7,40 @@ environment:
   sdk: ^3.6.1
 
 dependencies:
+  # Flutter dependencies
   flutter:
     sdk: flutter
-  core:
-    path: modules/core
-  core_ui:
-    path: modules/core_ui
-  user:
-    path: modules/user
-  product:
-    path: modules/product
-  flutter_riverpod: ^2.4.9
-  get_it: ^7.6.4
 
-  cupertino_icons: ^1.0.8
+  # Core packages for clean architecture
+  dio: ^5.8.0+1
+  get_it: ^7.0.0
+  riverpod: ^2.6.1
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # AutoRoute for navigation
+  auto_route: ^9.3.0+1
+  auto_route_generator: ^9.3.0+1
+
+  # JSON serialization
+  json_serializable: ^6.7.1
+  build_runner: ^2.2.0 # For code generation
+
+  # Other utilities and helpers
+  intl: ^0.18.0
+  provider: ^6.1.2     # For general provider support (can be useful with Riverpod)
+  shared_preferences: ^2.1.0
+  cached_network_image: ^3.1.0  # For efficient image loading
+
+  flutter_riverpod: ^2.4.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  # Code generation dependencies
+  build_runner: ^2.2.0
+  auto_route_generator: ^9.3.0+1  # For generating AutoRoute related code
+
 
 flutter:
   uses-material-design: true

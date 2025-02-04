@@ -1,7 +1,9 @@
-import 'package:core/domain/entities/product.dart';
-import 'package:core/domain/repositories/product_repository.dart';
-import 'package:core/data/datasources/product_local_data_source.dart';
-import 'package:core/data/models/product_model.dart';
+
+
+import 'package:multi_module_flutter/core/data/datasources/product_local_data_source.dart';
+import 'package:multi_module_flutter/core/data/models/product_model.dart';
+import 'package:multi_module_flutter/core/domain/entities/product.dart';
+import 'package:multi_module_flutter/core/domain/repositories/product_repository.dart';
 
 class ProductRepositoryImpl implements ProductRepository {
   final ProductLocalDataSource localDataSource;

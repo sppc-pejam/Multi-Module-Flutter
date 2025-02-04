@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:core/data/models/user_model.dart';
 import 'package:flutter/services.dart';
+import 'package:multi_module_flutter/core/data/models/user_model.dart';
 
 class UserLocalDataSource {
   Future<UserModel> getUser() async {

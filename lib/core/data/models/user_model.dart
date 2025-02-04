@@ -1,4 +1,6 @@
-import 'package:core/domain/entities/user.dart';
+
+
+import 'package:multi_module_flutter/core/domain/entities/user.dart';
 
 class UserModel {
   final int id;

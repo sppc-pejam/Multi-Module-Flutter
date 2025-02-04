@@ -1,4 +1,6 @@
-import 'package:core/domain/entities/product.dart';
+
+
+import 'package:multi_module_flutter/core/domain/entities/product.dart';
 
 class ProductModel {
   final int id;
