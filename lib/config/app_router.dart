@@ -1,6 +1,9 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:multi_module_flutter/core_ui/screens/login_screen.dart';
-import 'package:multi_module_flutter/core_ui/screens/splash_screen.dart';
+
+import '../core_ui/screens/splash_screen.dart';
+import '../dashboard/presentation/screens/dashboard_screen.dart';
+import '../user/presentation/screens/login_screen.dart';
+
 
 part 'app_router.gr.dart';
 
@@ -10,6 +13,7 @@ class AppRouter extends RootStackRouter {
   List<AutoRoute> get routes => [
         AutoRoute(page: SplashRoute.page, initial: true),
         AutoRoute(path: '/login', page: LoginRoute.page),
+        AutoRoute(path: '/dashboard', page: DashboardRoute.page),
       ];
 
   @override

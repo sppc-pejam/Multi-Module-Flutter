@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:multi_module_flutter/config/app_router.dart';
 
-void main() {
+import 'config/di.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await setupLocator();
   runApp(ProviderScope(child: App()));
 }
 
-class App extends StatelessWidget {
+class  App extends StatelessWidget {
   final _appRouter = AppRouter();
 
   @override
