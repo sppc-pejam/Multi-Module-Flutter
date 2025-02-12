@@ -1,11 +1,9 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../config/app_router.dart';
+import '../../../config/di.dart';
 import '../../domain/usecases/login_usecase.dart';
 
-@RoutePage()
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -19,20 +17,26 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   bool _isLoading = false;
 
-  final LoginUseCase _loginUseCase = GetIt.instance<LoginUseCase>();
+  final LoginUseCase _loginUseCase = getIt<LoginUseCase>();
 
+  Future<void> _login() async {
+    if (!_formKey.currentState!.validate()) return;
 
-  void _login() async {
-    bool success = await _loginUseCase.execute(
-      _usernameController.text,
-      _passwordController.text,
-    );
+    setState(() => _isLoading = true);
+
+    String username = _usernameController.text;
+    String password = _passwordController.text;
+
+    bool success = await _loginUseCase.execute(username, password);
+
+    setState(() => _isLoading = false);
 
     if (success) {
-      print("ورود موفق!");
-      context.router.replace(DashboardRoute());
+      context.go('/$username');
     } else {
-      print("نام کاربری یا رمز عبور اشتباه است.");
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("نام کاربری یا رمز عبور اشتباه است.")),
+      );
     }
   }
 
@@ -65,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
               _isLoading
                   ? const CircularProgressIndicator()
                   : ElevatedButton(
-                      onPressed: () => _login(),
+                      onPressed: _login,
                       child: const Text("ورود"),
                     ),
             ],

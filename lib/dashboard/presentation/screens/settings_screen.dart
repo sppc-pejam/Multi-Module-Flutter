@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({super.key});
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,8 +9,8 @@ class DashboardScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.dashboard, size: 100, color: Colors.blue),
-          Text("به داشبورد خوش آمدید", style: TextStyle(fontSize: 18)),
+          Icon(Icons.settings, size: 100, color: Colors.blue),
+          Text("به تنظیمات خوش آمدید", style: TextStyle(fontSize: 18)),
         ],
       ),
     );

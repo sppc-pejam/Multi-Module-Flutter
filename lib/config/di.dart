@@ -6,7 +6,6 @@ import '../user/domain/usecases/login_usecase.dart';
 final getIt = GetIt.instance;
 
 Future<void> setupLocator() async {
-  // ثبت HiveService و مقداردهی اولیه آن
   final hiveService = HiveService();
   await hiveService.init();
   getIt.registerLazySingleton<HiveService>(() => hiveService);
