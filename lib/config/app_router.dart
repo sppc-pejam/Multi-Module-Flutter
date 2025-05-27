@@ -12,7 +12,7 @@ import '../user/presentation/screens/login_screen.dart';
 import '../user/presentation/screens/user_list_screen.dart';
 
 final appRouter = GoRouter(
-  initialLocation: '/splash',
+  initialLocation: '/login',
   routes: [
     GoRoute(
       path: '/splash',
@@ -21,6 +21,12 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/login',
       builder: (context, state) => LoginScreen(),
+    ),
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return DashboardScreen();
+      },
     ),
     ShellRoute(
       builder: (context, state, child) {

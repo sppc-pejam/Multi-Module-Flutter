@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
     setState(() => _isLoading = false);
 
     if (success) {
-      context.go('/$username');
+      GoRouter.of(context).replace('/$username');
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("نام کاربری یا رمز عبور اشتباه است.")),
